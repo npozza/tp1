@@ -1,0 +1,84 @@
+/* Importo una font */
+
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,400i,700");
+
+/* Configuracion del video del fondo del sitio */
+* { box-sizing: border-box; }
+.video-background {
+  background: #000;
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: -99;
+}
+
+.video-foreground, .video-background iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+#vidtop-content {
+	top: 0;
+	color: #fff;
+}
+.vid-info { 
+    position: absolute; 
+    top: 0; right: 0; 
+    width: 30%; 
+    background: rgba(0,0,0,0); 
+    color: #fff; 
+    padding: 1rem; 
+    font-family: Avenir, Helvetica, sans-serif; 
+}
+
+@media (min-aspect-ratio: 16/9) {
+    .video-foreground { height: 300%; top: -100%; }
+  }
+  @media (max-aspect-ratio: 16/9) {
+    .video-foreground { width: 300%; left: -100%; }
+  }
+  @media all and (max-width: 600px) {
+  .vid-info { width: 50%; padding: .5rem; }
+  .vid-info h1 { margin-bottom: .2rem; }
+  }
+  @media all and (max-width: 500px) {
+  .vid-info .acronym { display: none; }
+  }
+
+  /* Configuracion la clase texto 1 */
+  #text1{
+    position: absolute;
+    color: #ffffff;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%, -50%);
+  }
+  
+    /* Configuracion la clase texto 2 */
+  #text2{
+    background-color: #ffffff;
+    top: 3%;
+  }
+  
+    /* Configuracion la clase texto */
+  #text{
+      position: absolute;
+      color: #FFFFFF;
+      left: 50%;
+      top: 60%;
+      transform: translate(-50%, -50%);
+    }
+
+  /* Configuracion del cuerpo de la pagina */
+body{
+  overflow-x: hidden;
+  font-family: Roboto, sans-serif;
+}
+
+  /* Configuracion del heading 1*/
+h1{
+  font-size: 70px ;
+  padding: 10px;
+}
