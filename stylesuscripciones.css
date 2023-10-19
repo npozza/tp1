@@ -1,0 +1,321 @@
+/* Configuracion general */
+*{
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+}
+
+html{
+font-size: 40px;
+font-family: 'Montserrat';
+scroll-behavior: auto;
+}
+
+/* Configuracion video de fondo del sitio */
+* { box-sizing: border-box; }
+.video-background {
+  background: #000;
+  position: fixed;
+  top: 0; right: 0; bottom: 0; left: 0;
+  z-index: -99;
+}
+
+.video-foreground, .video-background iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+#vidtop-content {
+	top: 0;
+	color: #fff;
+}
+.vid-info { 
+    position: absolute; 
+    top: 0; right: 0; 
+    width: 30%; 
+    background: rgba(0,0,0,0); 
+    color: #fff; 
+    padding: 1rem; 
+    font-family: Avenir, Helvetica, sans-serif; 
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  
+  /* Configuracion Heading 1 */
+  h1{
+    font-size: 70px ;
+    padding: 10px;
+    color: #FFFFFF;
+  }
+
+    /* Configuracion texto */
+ #text{
+    position: absolute;
+    color: #FFFFFF;
+    left: 50%;
+    top: 27%;
+    transform: translate(-50%, -50%);
+  }
+
+    /* Configuracion aspect ratio del video */
+@media (min-aspect-ratio: 16/9) {
+  .video-foreground { height: 300%; top: -100%; }
+}
+@media (max-aspect-ratio: 16/9) {
+  .video-foreground { width: 300%; left: -100%; }
+}
+@media all and (max-width: 600px) {
+.vid-info { width: 50%; padding: .5rem; }
+.vid-info h1 { margin-bottom: .2rem; }
+}
+@media all and (max-width: 500px) {
+.vid-info .acronym { display: none; }
+}
+
+
+section{
+min-height: 100vh;
+width: 100%;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+/* Configuracion seccion 1 */
+#sec-1{
+
+position: relative;
+}
+
+.back-button {
+  position: absolute;
+  top: 5%;
+  left: 10px;
+  background: rgba(2, 100, 247, 0.3); /* Color de fondo */
+  color: #fff; /* Color del texto */
+  padding: 10px 20px; /* Espaciado interno */
+  border-radius: 5px; /* Bordes redondeados */
+  text-decoration: none; /* Quita el subrayado del enlace */
+  font-weight: bold; /* Texto en negrita */
+  font-size: 15px;
+}
+
+.back-button:hover {
+  background: rgba(2, 100, 247, 0.3); /* Cambio de color al pasar el cursor cuando paso por encima */
+}
+
+/* Configuracion "Boton" scroll-down */
+.scroll-down {
+
+height: 25px; 
+width: 50px; 
+border: 2px solid rgb(255, 255, 255);
+position: absolute;
+left: 49%;
+bottom: 15px;
+border-radius: 15px;
+cursor: pointer;
+}
+
+.scroll-down::before,
+.scroll-down::after{
+content: '';
+position: absolute;
+top:10%;
+left: 50%;
+border: 2px solid rgb(255, 255, 255);
+height: 10px;
+width: 10px;
+transform: translate(-50%,-100%) rotate(45deg) ;
+border-top: transparent; /* pongo transparente el borde superior del cuadrado que se encuentra rotado 45 grados para hacer la flecha */
+border-left: transparent; /* pongo transparente el borde izquierdo del cuadrado que se encuentra rotado 45 grados para hacer la flecha */
+animation: scroll-down 1s ease-in-out infinite;
+}
+
+.scroll-down::after{
+
+top: 20%;
+animation-delay: .3s; /* delay para que aparezcan dos flechas */
+}
+
+/* animacion de scroll down */
+@keyframes scroll-down {
+    0%{
+        opacity: 0;
+    }
+    30%{
+
+        opacity: 1;
+    }
+    60%{
+
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        top: 90%;
+    }
+}
+
+.card-group {
+  display: flex;
+  flex-wrap: wrap; /* Para que las tarjetas se envuelvan ya que hay muchas */
+  justify-content: center; /* Centra horizontalmente las tarjetas */
+  margin-top: 57%; /* Ajusta la posición vertical de las tarjetas */
+}
+
+.card {
+  background-color: rgba(2, 100, 247, 0.3); /* Fondo con opacidad */
+  border: 2px solid  rgba(2, 100, 247, 0.3); /* Elimina el borde de las tarjetas y establece un borde transparente */
+  margin: 50px; /* Agrega un margen entre las tarjetas */
+  border-radius: 30px; /* Bordes curvos para todas las esquinas */
+  max-height: 320px; /* Altura máxima de las tarjetas */
+  max-width: 210px; /* Ancho máximo de las tarjetas  */
+  color: white; /* Cambia el color del texto a blanco */
+  border-width: 5px;
+  border-radius: 30px;
+  text-align: center;
+}
+
+.card-title {
+  font-size: 18px; /* Ajusta el tamaño de la fuente  */
+}
+
+.card-text {
+  font-size: 15px; /* Ajusta el tamaño de la fuente  */
+}
+
+.card img {
+  max-height: 30%;
+  max-width: 100%;
+  width: 100%;
+  height: 30%; /* Agrego la altura para forzar un tamaño específico */
+  object-fit: cover; /* Esto asegura que la imagen se ajuste sin distorsión */
+  border-radius: 30px; /* Esto hace que las imágenes sean ovaladas */
+}
+
+.rounded-image {
+  border-radius: 30px; /* Ajusta el valor del nivel de redondezde la imagen */
+}
+
+/* tiempo de animacion de zoom in de 0% a 100% */
+.zoom-in {
+  animation: zoomIn 1s both;
+}
+
+/* Configuracion para animacion de zoom in */
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.5); /* Tamaño inicial: 50% */
+  }
+  100% {
+    transform: scale(1); /* Tamaño final: 100% (original) */
+  }
+}
+
+
+.zoom-in:hover {
+  transform: scale(1.1); /* Factor de escala para el zoom in al hacer hover */
+}
+
+/* Configuracion Seccion 2 */
+#sec-2{
+
+  position: relative;
+}
+
+/* Configuracion "Boton" scroll-up de la Seccion 2 */
+.scroll-up {
+
+  height: 25px;
+  width: 50px;
+  border: 2px solid rgb(255, 255, 255);
+  position: absolute;
+  left: 49%;
+  bottom: 15px;
+  border-radius: 15px;
+  cursor: pointer;
+  }
+  
+  .scroll-up::before,
+  .scroll-up::after{
+  content: '';
+  position: absolute;
+  top:80%;
+  left: 50%;
+  border: 2px solid rgb(255, 255, 255);
+  height: 10px;
+  width: 10px;
+  transform: translate(-50%,-50%) rotate(45deg) ;
+  border-bottom: transparent;
+  border-right: transparent;
+  animation: scroll-up 1s ease-in-out infinite;
+  }
+  
+  .scroll-up::after{
+
+    bottom: 20%;
+    animation-delay: .3s;
+    }
+
+  @keyframes scroll-up {
+    0%{
+        opacity: 0;
+    }
+    30%{
+
+        opacity: 1;
+    }
+    60%{
+
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+        top: 20%;
+    }
+}
+
+
+
+/* Configuracion de la tabla en la Seccion 2 */
+#table {
+    position: absolute;
+    color: #ffffff;
+    left: 50%;
+    bottom: 23%; /* Centra verticalmente la tabla */
+    transform: translate(-50%, 50%); /* Centra horizontalmente la tabla */
+  }
+  
+  /* Estilo de la tabla y filas */
+  .table {
+    background-color: rgba(22, 22, 22, 0.2) ; /* Fondo transparente */
+    color: #ffffff;
+    font-size: 48px;
+    text-align: justify;
+    grid-auto-columns: auto;
+    grid-auto-rows: auto;
+    margin: 3px;
+  }
+  
+  .table th, .table td {
+    border-color: #ffffff;
+    color: #ffffff; /* Color del texto en celdas */
+    font-size: 16px;
+  }
+  
+  .table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+    background-color: #0a7abb;
+    color: #FFFFFF;
+  }
+
+

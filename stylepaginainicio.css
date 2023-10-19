@@ -1,0 +1,297 @@
+  /* Configuracion general */
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  }
+  
+  html{
+  font-size: 40px;
+  font-family: 'Montserrat';
+  scroll-behavior: auto;
+  }
+  
+    /* Configuracion video de fondo del sitio */
+  * { box-sizing: border-box; }
+  .video-background {
+    background: #000;
+    position: fixed;
+    top: 0; right: 0; bottom: 0; left: 0;
+    z-index: -99;
+  }
+  
+  .video-foreground, .video-background iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+
+  #vidtop-content {
+    top: 0;
+    color: #fff;
+  }
+  .vid-info { 
+      position: absolute; 
+      top: 0; right: 0; 
+      width: 30%; 
+      background: rgba(0,0,0,0); 
+      color: #fff; 
+      padding: 1rem; 
+      font-family: Avenir, Helvetica, sans-serif; 
+  }
+  
+  .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+    }
+    
+  
+  @media (min-aspect-ratio: 16/9) {
+    .video-foreground { height: 300%; top: -100%; }
+  }
+  @media (max-aspect-ratio: 16/9) {
+    .video-foreground { width: 300%; left: -100%; }
+  }
+  @media all and (max-width: 600px) {
+  .vid-info { width: 50%; padding: .5rem; }
+  .vid-info h1 { margin-bottom: .2rem; }
+  }
+  @media all and (max-width: 500px) {
+  .vid-info .acronym { display: none; }
+  }
+
+      /* Configuracion heading 1 */
+  h1{
+    font-size: 70px ;
+    position: relative;
+  }
+
+    /* Configuracion texto */
+  #text{
+    position: relative;
+    color: #FFFFFF;
+    left: 50%;
+    top: 30%;
+  }
+
+
+/* Estilo para el texto del navbar */
+.navbar {
+  font-size: 18px; /* Ajusta el tamaño de la fuente */
+  color: #FFFFFF;
+}
+
+.navbar a {
+  color: #fff; /* Cambia el color del texto en el menú de navegación a blanco */
+  text-decoration: none; /* Quita el subrayado de los enlaces */
+}
+
+/* Estilo para los elementos del menú de navegación */
+.navbar .navbar-nav .nav-item .nav-link {
+  color: #FFFFFF; /* Cambia el color del texto en el menú de navegación a blanco */
+}
+
+/* Estilo para el texto activo en el menú */
+.navbar .navbar-nav .nav-item .nav-link.active {
+  color: #FFFFFF; /* Cambia el color del texto cuando se visita el link en el menú a blanco */
+}
+
+.navbar .navbar-nav .nav-item .nav-link:visited {
+  color: #FFFFFF; /* Cambia el color del texto activo en el menú a blanco */
+}
+
+.navbar .navbar-nav .nav-item .nav-link:hover {
+  color: #ff0606; /* Cambia el color del texto cuando hago hover en el menú a blanco */
+}
+
+
+/* Estilo para el texto "Viajes Galacticos!" en el menú de navegación */
+.navbar .navbar-brand {
+  color: #FFFFFF; /* Cambia el color del texto "Viajes Galacticos!" a blanco */
+  font-size: 24px; /* Ajusta el tamaño de la fuente para "Viajes Galacticos!"  */
+}
+
+.navbar .navbar-brand:hover {
+  color: #003adb; /* Cambia el color del texto en el menú a azul al hacer hover */
+}
+
+.navbar .navbar-brand:visited {
+  color: #ffffff; /* Cambia el color del texto en el menú a blanco al hacer hover */
+}
+
+/* Configuracion Seccion */
+ section{
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  }
+  
+  /* Configuracion Seccion 1 */
+  #sec-1{
+  position: relative;
+  }
+  
+  /* Configuracion de heading 1 en Seccion 1 */
+  #sec-1 h1{
+    text-align: center;
+    color: #FFFFFF;
+    top: 10%; /* Ajusta la posición vertical */
+    left: 30%; /* Ajusta la posición horizontal */
+    position: absolute;
+  }
+  
+  #sec-1 h2 {
+    text-align: center;
+    color: #FFFFFF;
+    top: 20%; /* Ajusta la posición vertical */
+    left: 50%; /* Ajusta la posición horizontal */
+    position: absolute;
+  }
+
+  #text {
+    position: relative;
+    color: #FFFFFF;
+    left: 50%;
+    top: 30%; /* Ajusta la posición vertical */
+    transform: translate(-50%, -50%);
+  }
+
+
+
+  #sec-2{
+    position: relative;
+    }
+    
+    #sec-2 h1 {
+      text-align: center;
+      color: #FFFFFF;
+      position: absolute;
+      top: 25%; /* Ajusta la posición vertical */
+      left: 50%; /* Ajusta la posición horizontal */
+      transform: translate(-50%, -50%); /* Centra el texto exactamente en el medio */
+  }
+  
+    #text {
+      position: relative;
+      color: #FFFFFF;
+      left: 50%; /* Ajusta la posición horizontal */
+      top: 30%; /* Ajusta la posición vertical */
+      transform: translate(-50%, -50%); /* Centra el texto exactamente en el medio */
+    }
+
+    /* Cambia la ubicación de la tarjeta en sec-2 */
+#sec-2 .card {
+  margin-top: 15%; /* Ajusta la distancia desde la parte superior */
+}
+
+#sec-2 .card-text {
+  color: white; /* Cambia el color del texto a blanco */
+}
+
+/* Estilos para scroll-up en sec-2 y sec-3 */
+.scroll-up {
+  height: 25px;
+  width: 50px;
+  border: 2px solid rgb(255, 255, 255);
+  position: absolute;
+  left: 49%;
+  bottom: 15px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+.scroll-up::before,
+.scroll-up::after {
+  content: '';
+  position: absolute;
+  top: 80%;
+  left: 50%;
+  border: 2px solid rgb(255, 255, 255);
+  height: 10px;
+  width: 10px;
+  transform: translate(-50%, -50%) rotate(45deg);
+  border-bottom: transparent;
+  border-right: transparent;
+  animation: scroll-up 1s ease-in-out infinite;
+}
+
+.scroll-up::after {
+  bottom: 20%;
+  animation-delay: .3s;
+}
+
+@keyframes scroll-up {
+  0% {
+    opacity: 0;
+  }
+  30% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    top: 20%;
+  }
+}
+
+#sec-3{
+  position: relative;
+  }
+  
+  #sec-3{
+    position: relative;
+    }
+    
+    #sec-3 h1 {
+      text-align: center;
+      color: #FFFFFF;
+      position: absolute;
+      top: 20%; /* Ajusta la posición vertical */
+      left: 50%; /* Ajusta la posición horizontal */
+      transform: translate(-50%, -50%); /* Centra el texto exactamente en el medio */
+  }
+  
+    #text {
+      position: relative;
+      color: #FFFFFF;
+      left: 50%;
+      top: 30%; /* Ajusta la posición vertical */
+      transform: translate(-50%, -50%);
+    }
+
+    /* Estilos para las tablas en sec-3 */
+.tables-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 90px 0; /* Ajusta el margen superior e inferior para posicionar las tablas */
+}
+
+.table {
+  text-align: justify;
+  width: 48%; /* Ajusta el ancho */
+  margin-right: 30px; /* Ajusta el margen derecho para separar las tablas horizontalmente */
+}
+
+.table table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.table td {
+  border: 1px solid #fff; /* Estilo de borde para las celdas de la tabla */
+  padding: 10px;
+  color: #fff;
+  font-size: 18px; /* Tamano de la fuente en la linea */
+}
+
